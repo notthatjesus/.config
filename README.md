@@ -1,0 +1,90 @@
+# Apps to install
+- 1Password
+- 7zip
+- Adobe acrobat
+- AWS CLI
+- Balena
+- Bing Wallpaper
+- Calibre
+- DataGrip
+- Discord
+- Figma
+- Git
+- Golang
+- Goland?
+- Chrome
+- Google drive
+- Hyper
+- Jabra direct
+- Lens
+- logitech brio
+- VS Studio Code
+- Firefox
+- MQTT Explorer
+- NodeJS
+- Notion
+- Obsidian?
+- VirtualBox
+- PG14
+- PgAdmin
+- Postman
+- PowerToys
+- Pycharm
+- Python
+- Signal
+- Tastyworks
+- Todoist
+- Unifi
+- Vivaldi?
+- Zoom
+- Docker
+- Kubernetes tools
+- Kubectx
+- Kubectl
+- K9s
+
+
+# Setup configuration
+
+- Install 1Password
+    - Configure 1Password
+- Python installation
+    - 3.7
+    - 3.10
+- Shell
+    - Install ZSH
+    - Install powerlevel10k and configure
+    - SAVE CONFIGURATION FILES
+    - Install AWS CLI
+    - Copy SSH keys
+    - Copy AWS keys
+    - Install Hyper on Windows
+    - Install that thing similar to powerlevel10k for powershell
+    - Install nerdfonts
+- IDE
+    - Install Pycharm
+    - Install VS Code
+    - Install Data Grip
+    - Configure options for all of them
+    - SAVE CONFIGURATION FILES TO Github
+- Tools
+    - Install Docker
+    - Install Kubectl
+    - Install kubectx
+    - Install k9s
+    - Install terraform
+    - Install terragrunt
+    - Install pg14 client
+- Browsers
+    - Install Firefox
+    - Install Chrome
+- Communication
+    - Install Discord
+    - Install Slack
+    - Install Whatsapp
+    - Install Messenger
+    - 
+
+- Install Icedrive
+
+

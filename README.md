@@ -5,9 +5,85 @@ The scope of this project is to cover the applications and configurations requir
 ## Ubuntu
 - __Version__: 22.04
 - __Desktop__: GNOME
+
+## Apps to install
+[Here is the list](apps.md)
+
+## Configuration
+### Copy SSH keys
+Get your ssh keys from 1Password and then store them into `$HOME/.ssh`.
+```shell
+echo '[YOUR PRIVATE KEY]' > $HOME/.ssh/id_rsa
+echo '[YOUR PUBLIC KEY]' > $HOME/.ssh/id_rsa.pub
+chmod 0700 $HOME/.ssh/id_rsa
+chmod 0700 $HOME/.ssh/id_rsa.pub
+```
+
+### Install Git
+```shell
+sudo apt install git
+```
+### Shell
+```bash
+$ sudo apt install zsh
+```
+Run `zsh` and choose option (2) to create ~/.zshrc. Exit ZSH.
+
+__Install Nerd Fonts (Meslo)__
+```shell
+git clone --filter=blob:none --sparse git@github.com:ryanoasis/nerd-fonts
+cd nerd-fonts
+git sparse-checkout add patched-fonts/
+./install Meslo
+```
+After installing the fonts, open a new terminal and change the profile to use Meslo LGS font.
+
+__Install powerlevel10k__<br>
+Powerlevel10k is a shell customization with lots of features.
+```shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+```
+
+Run `zsh` and connifure the console options. Configuration file is stored here:
+- [.zshrc](.zshrc)
+- [.p10k.zsh](.p10kzsh)
+
+__Make ZSH the default shell__
+```shell
+chsh -s $(which zsh)
+```
+After logout your session, if you open a new terminal, ZSH should be used by default.
+
+### Shell tools
+
+__AWS CLI__
+```shell
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+Now you can run `aws configure` to setup AWS KEY ID and AWS KEY SECRET.
+
+The tools below are applications used for different purposes, mainly covering devops topics. To install these tools we will use `brew`. 
+
+Install brew:
+```shell
+cd $HOME
+mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+eval "$(homebrew/bin/brew shellenv)"
+brew update --force --quiet
+chmod -R go-w "$(brew --prefix)/share/zsh"
+```
+__Kubernetes tools__
+```shell
+brew install kubectl kubectx k9s
+brew install minikube
+```
+
 ### Customization
 __Configure secondary screen resolution__
-__Notes on performance__
+__Notes on performance__ <br>
 Wayland works nice with multiple screens but on single one looks bit blurry. Something to look at.
 Normal Ubuntu (GNOME) works better on a single screen but it's slower.
 
@@ -78,9 +154,6 @@ Normal Ubuntu (GNOME) works better on a single screen but it's slower.
 > - Time Tracking (212.5712.39)
 ### DataLore
 > - Plugins TBD
-# Apps to install
-[Here is the list](apps.md)
-
 
 # Setup configuration
 

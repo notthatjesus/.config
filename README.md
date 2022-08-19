@@ -81,6 +81,47 @@ brew install kubectl kubectx k9s
 brew install minikube
 ```
 
+__Biometric Authentication (XPS laptops)__
+
+!! This does not work!!
+Kudos to [this guy](https://www.reddit.com/r/Dell/comments/ixwgm0/xps_15_9500_ubuntu_popos_fingerprint_howto/)
+
+```shell
+sudo apt install libfprint-2-tod1
+
+```
+Download and install the package [here](http://dell.archive.canonical.com/updates/pool/public/libf/libfprint-2-tod1-goodix/)
+
+```shell
+sudo dpkg -i [PACKAGE_NAME]
+```
+
+Restart and edit user settings to use biometric auth.
+
+__Howdy(Windows hello)__
+This somewhat works for console but not initial login
+https://github.com/boltgolt/howdy
+
+```shell
+sudo add-apt-repository ppa:boltgolt/howdy
+sudo apt update
+sudo apt install howdy
+```
+
+
+__Screen Casting(Miracast)__
+
+```shell
+sudo apt-get install build-essential debhelper gnome-pkg-tools libglib2.0-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstrtspserver-1.0-dev libgtk-3-dev libnm-dev libpulse-dev libx264-dev meson wpasupplicant desktop-file-utils appstream-util lib-avahi-client-dev lib-avahi-gobject-dev
+
+git clone https://gitlab.gnome.org/GNOME/gnome-network-displays.git
+cd gnome-network-displays
+meson build
+cd build
+meson install
+```
+
+
 ### Customization
 __Configure secondary screen resolution__
 __Notes on performance__ <br>
